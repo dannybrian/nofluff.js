@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>nofluff.js demo</title>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' https://*.firebaseio.com data:; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' http://*.beadga.me data:">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="../nofluff.js"></script>
+        <link rel="stylesheet" href="../index.css">
+    </head>
+    <body>
+        <no-fluff data-test="{{name}}">
+            <table>
+                <no-fluff-repeat data-source="data.json">
+                    <tr id="{{id}}">
+                        <td>{{name}}</td>
+                        <td>{{email}}</td>
+                        <td>{{image}}</td>
+                        <td>{{rating}}</td>
+                    </tr>
+                </no-fluff-repeat>
+            </table>
+        </no-fluff>
+    </body>
+</html>
