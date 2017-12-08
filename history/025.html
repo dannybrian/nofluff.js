@@ -5,21 +5,20 @@
         <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' https://*.firebaseio.com data:; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' http://*.beadga.me data: https://www.nofluffjuststuff.com">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-        <!--
+        
         <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-        -->
         <link rel="stylesheet" href="index.css">
         
     </head>
     <body>
         <no-fluff data-test="{{name}}">
-            <h1>{{title}}</h1>
-            <p>{{description}}</p>
+            <h1>{{name}}</h1>
+            <p>{{name}}<span>{{name}}</span></p>
             <div class="table">
                 <no-fluff-repeat data-source="data.json">
                     <template id="speaker-row">
-                        <div class="speaker" data-speakerid="{{id}}">
+                        <div data-speakerid="{{id}}">
                             <img class="speaker" src="{{image}}"/>
                             <div class="name">{{name}}</div>
                             <div class="twitter"><img src="twitter.png"/>{{twitter}}</div>

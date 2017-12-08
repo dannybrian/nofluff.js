@@ -4,22 +4,29 @@
         <title>nofluff.js demo</title>
         <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' https://*.firebaseio.com data:; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' http://*.beadga.me data:">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-        <script src="../nofluff.js"></script>
-        <link rel="stylesheet" href="../index.css">
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <no-fluff data-test="{{name}}">
+            <h1>{{name}}</h1>
+            <p>{{name}}<span>{{name}}</span></p>
             <table>
                 <no-fluff-repeat data-source="data.json">
-                    <tr id="{{id}}">
-                        <td>{{name}}</td>
-                        <td>{{email}}</td>
-                        <td>{{image}}</td>
-                        <td>{{rating}}</td>
-                    </tr>
+                    <template id="speaker-row">
+                        <tr data-speakerid="{{id}}">
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{image}}</td>
+                            <td>{{rating}}</td>
+                        </tr>
+                    </template>
                 </no-fluff-repeat>
             </table>
         </no-fluff>
     </body>
+    
+    <!-- this has to go down below to get queries right -->
+    <script src="nofluff.js"></script>
 </html>

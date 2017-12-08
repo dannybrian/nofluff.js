@@ -40,13 +40,23 @@
             });
         }
         
-        // iterate child nodes, use nodeValue (not textContent)
-        iterateNodes() {
-            for (var i = 0; i < this.childNodes.length; i++) {
-                var nvalue = this.childNodes[i].nodeValue;
-                if (nvalue === undefined) { continue; }
-                var interped = this.interpolateText(nvalue, this._data);
-                this.childNodes[i].nodeValue = interped;
+        iterateNodes(nodes) {
+            nodes = (nodes === undefined) ? this.childNodes : nodes;
+            for (var i = 0; i < nodes.length; i++) {
+                var nvalue = nodes[i].nodeValue;
+                
+                // stop if we reach another no-fluff element
+                if (nodes[i].nodeName.toUpperCase().startsWith('NO-FLUFF')) {
+                    return;
+                }
+                
+                // fixed to just update value of text nodes
+                if (nodes[i].nodeType === Node.TEXT_NODE) {
+                    let interped = this.interpolateText(nvalue, this._data);
+                    nodes[i].nodeValue = interped;
+                }
+                
+                this.iterateNodes(nodes[i].childNodes);
             }
         }
     }
@@ -57,7 +67,6 @@
         }
     }
     
-    // register both
     customElements.define('no-fluff', NoFluff);
     customElements.define('no-fluff-repeat', NoFluffRepeat);
     

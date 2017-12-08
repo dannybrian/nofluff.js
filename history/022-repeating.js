@@ -40,13 +40,17 @@
             });
         }
         
-        // iterate child nodes, use nodeValue (not textContent)
-        iterateNodes() {
-            for (var i = 0; i < this.childNodes.length; i++) {
-                var nvalue = this.childNodes[i].nodeValue;
+        // fix for recursion
+        iterateNodes(nodes) {
+            nodes = (nodes === undefined) ? this.childNodes : nodes;
+            for (var i = 0; i < nodes.length; i++) {
+                var nvalue = nodes[i].nodeValue;
                 if (nvalue === undefined) { continue; }
                 var interped = this.interpolateText(nvalue, this._data);
-                this.childNodes[i].nodeValue = interped;
+                nodes[i].nodeValue = interped;
+                
+                // iterate child nodes, recursively
+                this.iterateNodes(nodes[i].childNodes);
             }
         }
     }
@@ -57,7 +61,6 @@
         }
     }
     
-    // register both
     customElements.define('no-fluff', NoFluff);
     customElements.define('no-fluff-repeat', NoFluffRepeat);
     
