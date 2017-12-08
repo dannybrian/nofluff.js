@@ -137,8 +137,14 @@
     
 }());
 
+// set the data manually on the no-fluff element
+var nofluff = document.querySelector('no-fluff');
+nofluff.data = { title: "Speakers", description: "Here are some of the speakers." };
+nofluff.iterateNodes();
+
 // enhancements:
 // fade in each after added and image loaded
 // click the element to change location.hash
 // poll with a ticker to get updates to the JSON (needs to cache the old {{ }} )
 // performance enhacenements, 304, etc.
+
