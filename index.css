@@ -5,10 +5,10 @@ body {
     padding: 10px;
     background-color: #f3f3f3;
 }
-div.speaker {
+no-fluff-speaker, div.speaker {
     float: left;
 }
-div.speaker.hide {
+no-fluff-speaker.hide, div.speaker.hide {
     display: none;
 }
 img.speaker {

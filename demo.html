@@ -19,11 +19,11 @@
             <div class="table">
                 <no-fluff-repeat data-source="data.json">
                     <template id="speaker-row" data-router="clickHideSiblings">
-                        <div class="speaker" id="{{id}}">
+                        <no-fluff-speaker id="{{id}}">
                             <img class="speaker" src="{{image}}"/>
                             <div class="name">{{name}}</div>
                             <div class="twitter"><img src="twitter.png"/>{{twitter}}</div>
-                        </div>
+                        </no-fluff-speaker>
                     </template>
                 </no-fluff-repeat>
             </div>
