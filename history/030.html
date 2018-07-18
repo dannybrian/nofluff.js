@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>nofluff.js demo</title>
-        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' https://*.firebaseio.com data:; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' http://*.beadga.me data: https://www.nofluffjuststuff.com">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' https://*.firebaseio.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; media-src *; img-src 'self' http://*.beadga.me data: https://www.nofluffjuststuff.com">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
         <!--
         <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
         -->
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../index.css">
         
     </head>
     <body>
@@ -17,12 +17,12 @@
             <h1>{{title}}</h1>
             <p>{{description}}</p>
             <div class="table">
-                <no-fluff-repeat data-source="data.json">
+                <no-fluff-repeat data-source="../data.json">
                     <template id="speaker-row" data-router="clickHideSiblings">
                         <div class="speaker" id="{{id}}">
                             <img class="speaker" src="{{image}}"/>
                             <div class="name">{{name}}</div>
-                            <div class="twitter"><img src="twitter.png"/>{{twitter}}</div>
+                            <div class="twitter"><img src="../twitter.png"/>{{twitter}}</div>
                         </div>
                     </template>
                 </no-fluff-repeat>
@@ -33,5 +33,5 @@
     
     
     <!-- this has to go down below to get queries right -->
-    <script src="nofluff.js"></script>
+    <script src="030-router.js"></script>
 </html>
