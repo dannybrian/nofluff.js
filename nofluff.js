@@ -39,9 +39,20 @@
                     this.iterateAttributes(nodes[i], values);    
                 }
                  
+                let origValue;
+                if (nodes[i]._origValue !== undefined) {
+                    origValue = nodes[i]._origValue;
+                }
+                else
+                {
+                    nodes[i]._origValue = nodes[i].nodeValue;
+                    origValue = nodes[i]._origValue;
+                }
+
+                
                 // console.log(`${nodes[i].nodeName}   ${nodes[i].nodeValue}`);
                 if (nodes[i].nodeType === Node.TEXT_NODE) {
-                    nodes[i].nodeValue = this.interpolateText(nodes[i].nodeValue, values);
+                    nodes[i].nodeValue = this.interpolateText(origValue, values);
                 }
                 
                 this.iterateNodes(nodes[i].childNodes, values);    

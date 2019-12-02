@@ -13,7 +13,7 @@
         }
         
         attributeChangedCallback () {
-            
+            console.log('attribute changed');
         }
         
         set data (data) {
