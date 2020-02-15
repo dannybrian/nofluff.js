@@ -1,0 +1,30 @@
+{
+  "name": "nofluff",
+  "version": "1.0.0",
+  "description": "a minimal JavaScript framework based on custom elements (v1) and ES6 classes",
+  "main": "nofluff.js",
+  "scripts": {
+    "start": "http-server -o /demo.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannybrian/nofluff.js.git"
+  },
+  "keywords": [
+    "web",
+    "components"
+  ],
+  "author": "Danny Brian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannybrian/nofluff.js/issues"
+  },
+  "homepage": "https://github.com/dannybrian/nofluff.js#readme",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.0"
+  }
+}
